@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ShopRoutingModule } from './shop-routing.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { PaymmentFormComponent } from './paymment-form/paymment-form.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
-  declarations: [ProductDetailComponent, PaymmentFormComponent],
+  declarations: [ProductDetailComponent, PaymmentFormComponent, ProductListComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
