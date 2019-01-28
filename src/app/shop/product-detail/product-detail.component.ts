@@ -40,6 +40,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   goToPayment() {
+    this.burnerService.cart.price = this.totalPrice;
+    this.burnerService.cart.item = this.product.name;
     this.router.navigate(['/shop/payment-info']);
   }
 

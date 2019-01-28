@@ -6,14 +6,14 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputName4">Name</label>
-            <input class="form-control" type="text" name="name" #nameRef="ngModel" required ngModel id="inputName4">
+            <input class="form-control" type="text" name="name" #nameRef="ngModel" required [(ngModel)]='name' id="inputName4">
             <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger">
               Name is required
             </div>
           </div>
           <div class="form-group col-md-6">
             <label for="inputPhone4">Phone</label>
-            <input class="form-control" type="text" name="phone" #phoneRef="ngModel" required ngModel id="inputPhone4">
+            <input class="form-control" type="text" name="phone" #phoneRef="ngModel" required [(ngModel)]='phone' id="inputPhone4">
             <div [hidden]="phoneRef.valid || phoneRef.pristine" class="alert alert-danger">
               Phone is required
             </div>
@@ -21,21 +21,23 @@
         </div>
         <div class="form-group">
           <label for="inputEmail">Email</label>
-          <input class="form-control" type="email" name="email" #emailRef="ngModel" required ngModel id="inputEmail">
+          <input class="form-control" type="email" name="email" #emailRef="ngModel" required [(ngModel)]='email' id="inputEmail">
           <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
             Email is required
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress">Address street (add landmark if application)</label>
-          <input class="form-control" type="text" name="address" #addressRef="ngModel" required ngModel id="inputAddress">
+          <input class="form-control" type="text" name="address" #addressRef="ngModel" required [(ngModel)]='address'
+            id="inputAddress">
           <div [hidden]="addressRef.valid || addressRef.pristine" class="alert alert-danger">
             Address is required
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress2">City</label>
-          <input class="form-control" type="text" name="address2" #address2Ref="ngModel" required ngModel id="inputAddress2">
+          <input class="form-control" type="text" name="address2" #address2Ref="ngModel" required [(ngModel)]='address2'
+            id="inputAddress2">
           <div [hidden]="address2Ref.valid || address2Ref.pristine" class="alert alert-danger">
             Address is required
           </div>
@@ -43,14 +45,14 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputState">State</label>
-            <input class="form-control" type="text" name="state" #stateRef="ngModel" required ngModel id="inputState">
+            <input class="form-control" type="text" name="state" #stateRef="ngModel" required [(ngModel)]='state' id="inputState">
             <div [hidden]="stateRef.valid || stateRef.pristine" class="alert alert-danger">
               State is required
             </div>
           </div>
           <div class="form-group col-md-2">
             <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="text" class="form-control" name='zip' [(ngModel)]='zip' id="inputZip">
           </div>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="! paymentForm.valid">Pay</button>
