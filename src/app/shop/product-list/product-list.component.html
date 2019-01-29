@@ -1,77 +1,62 @@
 <div class="container">
-    <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
-      <div class="filter"></div>
-      <div class="content-center">
-          <div class="container">
-              <div class="title-brand">
-                  <div class="angular-logo">
-                      <img src="assets/img/angular2-logo.png" alt="">
-                  </div>
-                  <h1 class="presentation-title">Paper Kit 2 Angular</h1>
-                  <div class="fog-low">
-                      <img src="assets/img/fog-low.png" alt="">
-                  </div>
-                  <div class="fog-low right">
-                      <img src="assets/img/fog-low.png" alt="">
-                  </div>
-              </div>
-
-              <h2 class="presentation-subtitle text-center">Free Bootstrap 4 UI Kit for Angular 7</h2>
+  <div class="page-header section-dark" style="background-image: url('assets/img/ganesha.jpeg')">
+    <div class="filter"></div>
+    <div class="content-center">
+      <div class="container">
+        <div class="title-brand">
+          <h1 class="presentation-title">Backflow Burner</h1>
+          <div class="fog-low">
+            <img src="assets/img/fog-low.png" alt="">
           </div>
+          <div class="fog-low right">
+            <img src="assets/img/fog-low.png" alt="">
+          </div>
+        </div>
       </div>
-      <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
-      <h6 class=" category-absolute ml-auto mr-auto">Designed and coded by
+    </div>
+    <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+    <h6 class=" category-absolute ml-auto mr-auto">Designed and coded by
       <!-- <h6 class="category category-absolute">Designed and coded by -->
-
-          <a href="https://www.creative-tim.com" target="_blank">
-              <img src="assets/img/creative-tim-white-slim2.png" class="creative-tim-logo">
-          </a>
-      </h6>
+    </h6>
   </div>
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Trending <b>Products</b></h2>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<!-- Wrapper for carousel items -->
-			<div class="carousel-inner">
-        <!--This should repeat-->
-				<div class="item carousel-item active">
-					<div class="row">
-						<div class="col-sm-3" *ngFor="let product of products">
-							<div class="thumb-wrapper">
-								<div class="img-box">
-									<img src="{{product.image}}" class="img-responsive img-fluid" alt="">
-								</div>
-								<div class="thumb-content">
-									<h4>{{product.label}}</h4>
-									<p class="item-price"><s>${{product.oldPrice}}</s> &nbsp;<span>${{product.newPrice}}</span></p>
-									<div class="star-rating">
-										<ul class="list-inline" *ngIf="product.rating">
-											<li class="list-inline-item">
-                        <i class="fa" [ngClass]="{'fa-star': product.rating >= 1,'fa-star-o': product.rating === 0, 'fa-star-half': product.rating === 0.5}"></i>
-                      </li>
-											<li class="list-inline-item">
-                        <i class="fa" [ngClass]="{'fa-star': product.rating >= 2,'fa-star-o': product.rating < 2, 'fa-star-half': product.rating === 2.5}"></i>
-                      </li>
-											<li class="list-inline-item">
-                        <i class="fa" [ngClass]="{'fa-star': product.rating >= 3,'fa-star-o': product.rating < 3, 'fa-star-half': product.rating === 3.5}"></i>
-                      </li>
-											<li class="list-inline-item">
-                        <i class="fa" [ngClass]="{'fa-star': product.rating >= 4,'fa-star-o': product.rating < 4, 'fa-star-half': product.rating === 4.5}"></i>
-                      </li>
-											<li class="list-inline-item">
-                        <i class="fa" [ngClass]="{'fa-star': product.rating >= 5,'fa-star-o': product.rating < 5}"></i>
-                      </li>
-										</ul>
-									</div>
-									<a href="javascript:void(0)" (click)="goToDetailsPage(product)" class="btn btn-primary">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Trending <b>Products</b></h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <!--This should repeat-->
+          <div class="item carousel-item active">
+            <div class="row">
+              <div class="col-sm-3" *ngFor="let product of products">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="{{product.image}}" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{product.name}}</h4>
+                    <p class="item-price"><s>{{("RS. " + (product.price * 5/3).toString().substring(0, 5))}}</s> &nbsp;<span>Rs.
+                        {{product.price}}</span></p>
+                    <div class="star-rating">
+                      <div class="rating">
+                        <div class="stars">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">{{product.review}} reviews</span>
+                      </div>
+                    </div>
+                    <a href="javascript:void(0)" (click)="goToDetailsPage(product.id)" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

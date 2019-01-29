@@ -1,5 +1,5 @@
 .container {
-	margin-top: 70px;
+	// margin-top: 70px;
 }
 
 h2 {
@@ -40,7 +40,7 @@ h2::after {
 	position: relative;
 }
 .carousel .item img {	
-	max-width: 53%;
+	max-width: 65%;
 	max-height: 100%;
 	display: inline-block;
 	position: absolute;
@@ -147,4 +147,8 @@ h2::after {
 
 .no-color-anchror {
 	color: inherit;
+}
+
+.checked {
+  color: #ff9f1a;
 }

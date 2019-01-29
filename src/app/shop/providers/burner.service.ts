@@ -14,6 +14,7 @@ export class BurnerService {
 
   host: string = "http://pinnacle.lewiot.com:5012";
   // host: string = "http://localhost:5012";
+  listUrl: string = this.host + "/api/products/backflow-burder/list";
   detailUrl: string = this.host + "/api/products/backflow-burder/detail";
   preparePaymentUrl: string = this.host + "/api/product/prepare-payment";
   orderDetailUrl: string = this.host + "/api/product/get-order";
@@ -33,5 +34,9 @@ export class BurnerService {
 
   getOrderDetail(data: any): Observable<any> {
     return this.httpClient.post(this.orderDetailUrl, data);
+  }
+
+  getBurnerList(): Observable<any> {
+    return this.httpClient.get(this.listUrl);
   }
 }
