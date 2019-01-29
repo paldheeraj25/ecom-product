@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BurnerService } from '../providers/burner.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import values from 'lodash/values';
 
@@ -17,15 +17,18 @@ export class ProductDetailComponent implements OnInit {
   gallery: Array<string> = [];
   product: any = {};
   totalPrice: number = 0;
-  constructor(private burnerService: BurnerService, private router: Router) { }
+  constructor(private burnerService: BurnerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.burnerService.getProduct("burnerDetail-1").subscribe(result => {
-      this.product = result;
-      this.image = result.image;
-      this.gallery = values(result.gallery);
-      this.totalPrice = this.product.price;
-    })
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.burnerService.getProduct(id).subscribe(result => {
+        this.product = result;
+        this.image = result.image;
+        this.gallery = values(result.gallery);
+        this.totalPrice = this.product.price;
+      })
+    }
   }
 
   changeImage(img: string) {
