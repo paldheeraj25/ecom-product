@@ -37,8 +37,21 @@
               </div>
             </div>
           </div>
-          <h4 class="price">current price: <span>Rs. {{product.price}}</span></h4>
+          <h5>Regular Price: <span class="line-through">{{("RS. " + (product.price * 5/3).toString().substring(0, 5))}}</span>
+            40%
+            off
+          </h5>
+          <h5>
+            Offer valid till:
+            <b>
+              <countdown [config]="{leftTime: 90 * 10}">$!m!:$!s!</countdown>
+            </b>
+          </h5>
+          <h4 class="price">current price:
+            <span>Rs.
+              {{product.price}}</span></h4>
           <h6>Total: <span>Rs. {{totalPrice}}</span></h6>
+
           <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>({{product.votes}} votes)</strong></p>
           <div class="action">
             <button type="button" class="btn btn-default">Add to Cart</button>

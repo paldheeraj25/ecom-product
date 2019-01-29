@@ -7,13 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { PaymmentFormComponent } from './paymment-form/paymment-form.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
+import { PaymentNotificationComponent } from './payment-notification/payment-notification.component';
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
-  declarations: [ProductDetailComponent, PaymmentFormComponent, ProductListComponent],
+  declarations: [ProductDetailComponent, PaymmentFormComponent, ProductListComponent, PaymentNotificationComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
-    FormsModule
+    FormsModule,
+    CountdownModule
   ]
 })
 export class ShopModule { }

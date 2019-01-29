@@ -13,8 +13,11 @@ import { Observable } from 'rxjs/Observable';
 export class BurnerService {
 
   host: string = "http://pinnacle.lewiot.com:5012";
+  // host: string = "http://localhost:5012";
   detailUrl: string = this.host + "/api/products/backflow-burder/detail";
-  public cart: any;
+  preparePaymentUrl: string = this.host + "/api/product/prepare-payment";
+  orderDetailUrl: string = this.host + "/api/product/get-order";
+  public cart: any = {};
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,5 +25,13 @@ export class BurnerService {
     const params = new HttpParams().set('id', id);
 
     return this.httpClient.get(this.detailUrl, { params });
+  }
+
+  getPaymentUrl(data: any): Observable<any> {
+    return this.httpClient.post(this.preparePaymentUrl, data);
+  }
+
+  getOrderDetail(data: any): Observable<any> {
+    return this.httpClient.post(this.orderDetailUrl, data);
   }
 }
