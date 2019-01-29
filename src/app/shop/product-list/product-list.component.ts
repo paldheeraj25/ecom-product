@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
 
   goToDetailsPage(product) {
     console.log(product);
-    this.router.navigate(['./detail']);
+    this.router.navigate(['shop', 'detail']);
   }
 
 }
