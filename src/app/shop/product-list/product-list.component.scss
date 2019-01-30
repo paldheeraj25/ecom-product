@@ -40,7 +40,7 @@ h2::after {
 	position: relative;
 }
 .carousel .item img {	
-	max-width: 65%;
+	max-width: 55%;
 	max-height: 100%;
 	display: inline-block;
 	position: absolute;
@@ -65,6 +65,11 @@ h2::after {
     padding: 5px 10px;
     margin-top: 5px;
     line-height: 16px;
+}
+
+.presentation-title {
+  font-size: 5em;
+  font-weight: 200;
 }
 .carousel .item .btn:hover, .carousel .item .btn:focus {
 	color: #fff;

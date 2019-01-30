@@ -9,9 +9,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 import { PaymentNotificationComponent } from './payment-notification/payment-notification.component';
 import { CountdownModule } from 'ngx-countdown';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [ProductDetailComponent, PaymmentFormComponent, ProductListComponent, PaymentNotificationComponent],
+  declarations: [ProductDetailComponent, PaymmentFormComponent, ProductListComponent, PaymentNotificationComponent, AboutUsComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
