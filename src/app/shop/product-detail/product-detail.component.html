@@ -3,7 +3,7 @@
     <div class="container-fliud">
       <div class="wrapper row">
         <div class="preview col-md-6">
-
+          <div><img src="https://firebasestorage.googleapis.com/v0/b/lakshmi-53afa.appspot.com/o/logo1.png?alt=media&token=4e6330bc-2985-40a0-a03d-a4f1dc9d3ebe" /></div>
           <div class="preview-pic tab-content">
             <div><img src={{image}} /></div>
           </div>
@@ -25,6 +25,28 @@
             </div>
             <span class="review-no">{{product.review}} reviews</span>
           </div>
+          <div>
+            <button type="button" class="btn btn-success" (click)=goToPayment()>Buy Now</button>
+            <img class="img-responsive pull-right" src="https://firebasestorage.googleapis.com/v0/b/lakshmi-53afa.appspot.com/o/payment.png?alt=media&token=374c1a34-2484-465f-b8d4-1b288502246e">
+          </div>
+          <!-- <div class="d-flex justify-content-between">
+            <div class="p-2 bd-highlight">
+              <div class="rating">
+                <div class="stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <span class="review-no">{{product.review}} reviews</span>
+              </div>
+            </div>
+            <div class="p-2 bd-highlight">
+              <button type="button" class="btn btn-success" (click)=goToPayment()>Buy Now</button>
+              <img class="img-responsive pull-right" src="https://firebasestorage.googleapis.com/v0/b/lakshmi-53afa.appspot.com/o/payment.png?alt=media&token=374c1a34-2484-465f-b8d4-1b288502246e">
+            </div>
+          </div> -->
           <p class="product-description">{{product.description}}</p>
           <div class="row">
             <div class="col-sm-3 text-right">
@@ -41,20 +63,22 @@
             40%
             off
           </h5>
-          <h5>
-            Sale ending in:
-            <b>
-              <countdown [config]="{leftTime: 90 * 10}">$!m!:$!s!</countdown>
-            </b>
-          </h5>
+
           <h4 class="price">current price:
-            <span>Rs.
-              {{product.price}}</span></h4>
+            <span>Rs. {{product.price}}</span>
+          </h4>
+          <span class="save-payment">(you save RS. {{(product.price * 5/3 * 2/5).toString().substring(0, 5)}})</span>
+          <h4>
+            <b>
+              Sale ending in:
+              <countdown [config]="{leftTime: 28000 * 100}">$!h!:$!m!:$!s!</countdown>
+            </b>
+          </h4>
           <h6>Total: <span>Rs. {{totalPrice}}</span></h6>
 
           <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>({{product.votes}} votes)</strong></p>
           <div class="action">
-            <button type="button" class="btn btn-default">Add to Cart</button>
+            <!-- <button type="button" class="btn btn-default">Add to Cart</button> -->
             <button type="button" class="btn btn-success" (click)=goToPayment()>Buy Now</button>
           </div>
         </div>

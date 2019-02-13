@@ -16,14 +16,14 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'shop', loadChildren: './shop/shop.module#ShopModule' },
   { path: 'nucleoicons', component: NucleoiconsComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'shop', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   exports: [
   ],

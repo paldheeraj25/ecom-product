@@ -25,7 +25,7 @@ export class PaymentNotificationComponent implements OnInit {
       .pipe(filter(params => Object.keys(params).length > 0 === window.location.href.includes('payment_id')))
       .subscribe(params => {
         this.burnerService.getOrderDetail({ order_id: params['payment_request_id'] }).subscribe(result => {
-          console.log(result)
+          console.log(result.order_detail)
           this.name = result.order_detail['name'];
           this.address = result.order_detail['address'];
           this.item = result.order_detail['item'];

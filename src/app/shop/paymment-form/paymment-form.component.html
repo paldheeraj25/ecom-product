@@ -1,7 +1,13 @@
 <div class="container">
+  <br>
   <div class="row">
-    <div class='col-3'></div>
-    <div class="col">
+    <div class="col text-center">
+      <h6 class="payment-text">Please Provide you address for shipment</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class='col-1'></div>
+    <div class="col-10">
       <form class='paymentForm' #paymentForm="ngForm" (ngSubmit)="openPayment()">
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -52,12 +58,14 @@
           </div>
           <div class="form-group col-md-2">
             <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" name='zip' [(ngModel)]='zip' id="inputZip">
+            <input type="text" class="form-control" name='zip' [(ngModel)]='zip' id="inputZip" required>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="! paymentForm.valid">Pay</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Pay Online</button>
+        <button type="button" (click)="cashOnDelivery()" class="btn btn-primary" [disabled]="!paymentForm.valid">Cash
+          on Delivery</button>
       </form>
     </div>
-    <div class='col-3'></div>
+    <div class='col-1'></div>
   </div>
 </div>

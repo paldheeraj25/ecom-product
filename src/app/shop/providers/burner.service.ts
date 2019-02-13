@@ -12,12 +12,19 @@ import { Observable } from 'rxjs/Observable';
 })
 export class BurnerService {
 
-  host: string = "http://pinnacle.lewiot.com:5012";
-  // host: string = "http://localhost:5012";
-  listUrl: string = this.host + "/api/products/backflow-burder/list";
-  detailUrl: string = this.host + "/api/products/backflow-burder/detail";
-  preparePaymentUrl: string = this.host + "/api/product/prepare-payment";
-  orderDetailUrl: string = this.host + "/api/product/get-order";
+  // host: string = "https://greatshoppingdeals.in";
+  // //host: string = "http://localhost:5012";
+  // listUrl: string = this.host + "/api/products/backflow-burder/list";
+  // detailUrl: string = this.host + "/api/products/backflow-burder/detail";
+  // preparePaymentUrl: string = this.host + "/api/product/prepare-payment";
+  // orderDetailUrl: string = this.host + "/api/product/get-order";
+
+  //Below for production mode
+
+  listUrl: string = "/api/products/backflow-burder/list";
+  detailUrl: string = "/api/products/backflow-burder/detail";
+  preparePaymentUrl: string = "/api/product/prepare-payment";
+  orderDetailUrl: string = "/api/product/get-order";
   public cart: any = {};
 
   constructor(private httpClient: HttpClient) { }
